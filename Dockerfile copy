@@ -1,0 +1,20 @@
+# Use the latest Node.js image
+FROM node:latest
+
+# Set the working directory
+WORKDIR /home/kyawkyawlin/Sites/Docker
+
+# Install json-server globally
+RUN npm install -g json-server
+
+# Copy the db.json file to the working directory
+COPY db.json /home/kyawkyawlin/Sites/Docker/db.json
+
+COPY alt.json /home/kyawkyawlin/Sites/Docker/alt.json
+
+EXPOSE 3000
+
+# Set the entrypoint to run json-server with the db.json file
+ENTRYPOINT ["json-server", "db.json", "--host", "0.0.0.0"]
+
+CMD ["db.json"]
