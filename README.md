@@ -8,8 +8,11 @@
 ```
 docker ps
 ```
-which will show any active containers in our system.
-
+which will show all running containers and some basic information about them in our system.
+```
+docker ps -a
+```
+all containers running or not
 ```
 docker run --rm hello-world
 ```
@@ -18,3 +21,20 @@ remove the container
 ```
 docker run --rm ubuntu:latest cat /etc/os-release
 ```
+```
+docker run
+```
+run container from image
+```
+docker stop container_name
+```
+```
+docker rm container_name
+```
+```
+docker images
+```
+```
+docker rmi image_name
+```
+delete all dependent containers to remove image
